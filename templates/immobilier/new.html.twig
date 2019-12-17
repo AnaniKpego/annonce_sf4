@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Immobilier{% endblock %}
+
+{% block body %}
+    <h1>Create new Immobilier</h1>
+
+    {{ include('immobilier/_form.html.twig') }}
+
+    <a href="{{ path('immobilier_index') }}">back to list</a>
+{% endblock %}

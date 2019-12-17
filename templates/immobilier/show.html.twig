@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Immobilier{% endblock %}
+
+{% block body %}
+    <h1>Immobilier</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ immobilier.id }}</td>
+            </tr>
+            <tr>
+                <th>TypeDemande</th>
+                <td>{{ immobilier.typeDemande }}</td>
+            </tr>
+            <tr>
+                <th>Localite</th>
+                <td>{{ immobilier.localite }}</td>
+            </tr>
+            <tr>
+                <th>PrixMin</th>
+                <td>{{ immobilier.prixMin }}</td>
+            </tr>
+            <tr>
+                <th>PrixMax</th>
+                <td>{{ immobilier.prixMax }}</td>
+            </tr>
+            <tr>
+                <th>PiecesMin</th>
+                <td>{{ immobilier.piecesMin }}</td>
+            </tr>
+            <tr>
+                <th>SurfaceHabitableMin</th>
+                <td>{{ immobilier.surfaceHabitableMin }}</td>
+            </tr>
+            <tr>
+                <th>SurfaceHabitableMax</th>
+                <td>{{ immobilier.surfaceHabitableMax }}</td>
+            </tr>
+            <tr>
+                <th>TypeDobjet</th>
+                <td>{{ immobilier.typeDobjet }}</td>
+            </tr>
+            <tr>
+                <th>Caracteristiques</th>
+                <td>{{ immobilier.caracteristiques }}</td>
+            </tr>
+            <tr>
+                <th>Etage</th>
+                <td>{{ immobilier.etage }}</td>
+            </tr>
+            <tr>
+                <th>Created_at</th>
+                <td>{{ immobilier.createdAt ? immobilier.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>DisponibiliteMin</th>
+                <td>{{ immobilier.disponibiliteMin }}</td>
+            </tr>
+            <tr>
+                <th>DisponibiliteMax</th>
+                <td>{{ immobilier.disponibiliteMax }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ immobilier.image }}</td>
+            </tr>
+            <tr>
+                <th>PieceMax</th>
+                <td>{{ immobilier.pieceMax }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('immobilier_index') }}">back to list</a>
+
+    <a href="{{ path('immobilier_edit', {'id': immobilier.id}) }}">edit</a>
+
+    {{ include('immobilier/_delete_form.html.twig') }}
+{% endblock %}

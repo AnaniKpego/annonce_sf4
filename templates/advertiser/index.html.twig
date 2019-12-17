@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Advertiser index{% endblock %}
+
+{% block body %}
+    <h1>Advertiser index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Country</th>
+                <th>City</th>
+                <th>Created_at</th>
+                <th>Phone</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for advertiser in advertisers %}
+            <tr>
+                <td>{{ advertiser.id }}</td>
+                <td>{{ advertiser.email }}</td>
+                <td>{{ advertiser.password }}</td>
+                <td>{{ advertiser.firstname }}</td>
+                <td>{{ advertiser.lastname }}</td>
+                <td>{{ advertiser.country }}</td>
+                <td>{{ advertiser.city }}</td>
+                <td>{{ advertiser.createdAt ? advertiser.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ advertiser.phone }}</td>
+                <td>
+                    <a href="{{ path('advertiser_show', {'id': advertiser.id}) }}">show</a>
+                    <a href="{{ path('advertiser_edit', {'id': advertiser.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="10">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('advertiser_new') }}">Create new</a>
+{% endblock %}

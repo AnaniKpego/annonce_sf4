@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ad{% endblock %}
+
+{% block body %}
+    <h1>Ad</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ ad.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ ad.title }}</td>
+            </tr>
+            <tr>
+                <th>Content</th>
+                <td>{{ ad.content }}</td>
+            </tr>
+            <tr>
+                <th>Created_at</th>
+                <td>{{ ad.createdAt ? ad.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Opened_at</th>
+                <td>{{ ad.openedAt ? ad.openedAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Closed_at</th>
+                <td>{{ ad.closedAt ? ad.closedAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Monthlyprice</th>
+                <td>{{ ad.monthlyprice }}</td>
+            </tr>
+            <tr>
+                <th>Dailyprice</th>
+                <td>{{ ad.dailyprice }}</td>
+            </tr>
+            <tr>
+                <th>Annualprice</th>
+                <td>{{ ad.annualprice }}</td>
+            </tr>
+            <tr>
+                <th>Sellingprice</th>
+                <td>{{ ad.sellingprice }}</td>
+            </tr>
+            <tr>
+                <th>Country</th>
+                <td>{{ ad.country }}</td>
+            </tr>
+            <tr>
+                <th>City</th>
+                <td>{{ ad.city }}</td>
+            </tr>
+            <tr>
+                <th>Phone</th>
+                <td>{{ ad.phone }}</td>
+            </tr>
+            <tr>
+                <th>Chrono</th>
+                <td>{{ ad.chrono }}</td>
+            </tr>
+            <tr>
+                <th>Statu</th>
+                <td>{{ ad.statu }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('ad_index') }}">back to list</a>
+
+    <a href="{{ path('ad_edit', {'id': ad.id}) }}">edit</a>
+
+    {{ include('ad/_delete_form.html.twig') }}
+{% endblock %}

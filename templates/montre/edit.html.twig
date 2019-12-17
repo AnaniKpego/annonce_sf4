@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Montre{% endblock %}
+
+{% block body %}
+    <h1>Edit Montre</h1>
+
+    {{ include('montre/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('montre_index') }}">back to list</a>
+
+    {{ include('montre/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,190 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Vehicule{% endblock %}
+
+{% block body %}
+    <h1>Vehicule</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ vehicule.id }}</td>
+            </tr>
+            <tr>
+                <th>Marque</th>
+                <td>{{ vehicule.marque }}</td>
+            </tr>
+            <tr>
+                <th>Modele</th>
+                <td>{{ vehicule.modele }}</td>
+            </tr>
+            <tr>
+                <th>Version</th>
+                <td>{{ vehicule.version }}</td>
+            </tr>
+            <tr>
+                <th>PrixMin</th>
+                <td>{{ vehicule.prixMin }}</td>
+            </tr>
+            <tr>
+                <th>PrixMax</th>
+                <td>{{ vehicule.prixMax }}</td>
+            </tr>
+            <tr>
+                <th>BoiteDeVitesse</th>
+                <td>{{ vehicule.boiteDeVitesse }}</td>
+            </tr>
+            <tr>
+                <th>RouesMotrices</th>
+                <td>{{ vehicule.rouesMotrices }}</td>
+            </tr>
+            <tr>
+                <th>KilometrageMin</th>
+                <td>{{ vehicule.kilometrageMin }}</td>
+            </tr>
+            <tr>
+                <th>KilometrageMax</th>
+                <td>{{ vehicule.kilometrageMax }}</td>
+            </tr>
+            <tr>
+                <th>Carburant</th>
+                <td>{{ vehicule.carburant }}</td>
+            </tr>
+            <tr>
+                <th>CategorieVehicule</th>
+                <td>{{ vehicule.categorieVehicule }}</td>
+            </tr>
+            <tr>
+                <th>AnneeMin</th>
+                <td>{{ vehicule.anneeMin }}</td>
+            </tr>
+            <tr>
+                <th>AnneeMax</th>
+                <td>{{ vehicule.anneeMax }}</td>
+            </tr>
+            <tr>
+                <th>CategorieLicence</th>
+                <td>{{ vehicule.categorieLicence }}</td>
+            </tr>
+            <tr>
+                <th>KwMin</th>
+                <td>{{ vehicule.kwMin }}</td>
+            </tr>
+            <tr>
+                <th>KwMax</th>
+                <td>{{ vehicule.kwMax }}</td>
+            </tr>
+            <tr>
+                <th>CylindreMin</th>
+                <td>{{ vehicule.cylindreMin }}</td>
+            </tr>
+            <tr>
+                <th>CylindreMax</th>
+                <td>{{ vehicule.cylindreMax }}</td>
+            </tr>
+            <tr>
+                <th>Qualites</th>
+                <td>{{ vehicule.qualites }}</td>
+            </tr>
+            <tr>
+                <th>Categorie</th>
+                <td>{{ vehicule.categorie }}</td>
+            </tr>
+            <tr>
+                <th>Couleur</th>
+                <td>{{ vehicule.couleur }}</td>
+            </tr>
+            <tr>
+                <th>PlacesMin</th>
+                <td>{{ vehicule.placesMin }}</td>
+            </tr>
+            <tr>
+                <th>PlacesMax</th>
+                <td>{{ vehicule.placesMax }}</td>
+            </tr>
+            <tr>
+                <th>Equipement</th>
+                <td>{{ vehicule.equipement }}</td>
+            </tr>
+            <tr>
+                <th>EquipementSuplementaire</th>
+                <td>{{ vehicule.equipementSuplementaire }}</td>
+            </tr>
+            <tr>
+                <th>QualiteEquipement</th>
+                <td>{{ vehicule.qualiteEquipement }}</td>
+            </tr>
+            <tr>
+                <th>Consommation</th>
+                <td>{{ vehicule.consommation }}</td>
+            </tr>
+            <tr>
+                <th>Co2EmissionBis</th>
+                <td>{{ vehicule.co2EmissionBis }}</td>
+            </tr>
+            <tr>
+                <th>NormesEmission</th>
+                <td>{{ vehicule.normesEmission }}</td>
+            </tr>
+            <tr>
+                <th>NpaLieu</th>
+                <td>{{ vehicule.npaLieu }}</td>
+            </tr>
+            <tr>
+                <th>Rayon</th>
+                <td>{{ vehicule.rayon }}</td>
+            </tr>
+            <tr>
+                <th>AgeDelAnnonce</th>
+                <td>{{ vehicule.ageDelAnnonce }}</td>
+            </tr>
+            <tr>
+                <th>Tri</th>
+                <td>{{ vehicule.tri }}</td>
+            </tr>
+            <tr>
+                <th>SigleQualite</th>
+                <td>{{ vehicule.sigleQualite }}</td>
+            </tr>
+            <tr>
+                <th>ChMin</th>
+                <td>{{ vehicule.chMin }}</td>
+            </tr>
+            <tr>
+                <th>ChMax</th>
+                <td>{{ vehicule.chMax }}</td>
+            </tr>
+            <tr>
+                <th>PoidsRemarquableMin</th>
+                <td>{{ vehicule.poidsRemarquableMin }}</td>
+            </tr>
+            <tr>
+                <th>PoidsRemarquableMax</th>
+                <td>{{ vehicule.poidsRemarquableMax }}</td>
+            </tr>
+            <tr>
+                <th>TypeCarrosserie</th>
+                <td>{{ vehicule.typeCarrosserie }}</td>
+            </tr>
+            <tr>
+                <th>NbrePorteMin</th>
+                <td>{{ vehicule.nbrePorteMin }}</td>
+            </tr>
+            <tr>
+                <th>NbrePorteMax</th>
+                <td>{{ vehicule.nbrePorteMax }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ vehicule.image }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('vehicule_index') }}">back to list</a>
+
+    <a href="{{ path('vehicule_edit', {'id': vehicule.id}) }}">edit</a>
+
+    {{ include('vehicule/_delete_form.html.twig') }}
+{% endblock %}

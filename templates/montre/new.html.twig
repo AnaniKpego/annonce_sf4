@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Montre{% endblock %}
+
+{% block body %}
+    <h1>Create new Montre</h1>
+
+    {{ include('montre/_form.html.twig') }}
+
+    <a href="{{ path('montre_index') }}">back to list</a>
+{% endblock %}

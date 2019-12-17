@@ -1,0 +1,43 @@
+<?php
+
+declare(strict_types=1);
+
+namespace DoctrineMigrations;
+
+use Doctrine\DBAL\Schema\Schema;
+use Doctrine\Migrations\AbstractMigration;
+
+/**
+ * Auto-generated Migration: Please modify to your needs!
+ */
+final class Version20191102130916 extends AbstractMigration
+{
+    public function getDescription() : string
+    {
+        return '';
+    }
+
+    public function up(Schema $schema) : void
+    {
+        // this up() migration is auto-generated, please modify it to your needs
+        $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'postgresql', 'Migration can only be executed safely on \'postgresql\'.');
+
+        $this->addSql('ALTER TABLE bande_dessinee ADD image VARCHAR(255) NOT NULL');
+        $this->addSql('ALTER TABLE immobilier ADD image VARCHAR(255) NOT NULL');
+        $this->addSql('ALTER TABLE moto ADD image VARCHAR(255) NOT NULL');
+        $this->addSql('ALTER TABLE vehicule ADD image VARCHAR(255) NOT NULL');
+    }
+
+    public function down(Schema $schema) : void
+    {
+        // this down() migration is auto-generated, please modify it to your needs
+        $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'postgresql', 'Migration can only be executed safely on \'postgresql\'.');
+
+        $this->addSql('CREATE SCHEMA public');
+        $this->addSql('CREATE SCHEMA annonce_sf4');
+        $this->addSql('ALTER TABLE vehicule DROP image');
+        $this->addSql('ALTER TABLE moto DROP image');
+        $this->addSql('ALTER TABLE bande_dessinee DROP image');
+        $this->addSql('ALTER TABLE immobilier DROP image');
+    }
+}

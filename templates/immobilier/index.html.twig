@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Immobilier index{% endblock %}
+
+{% block body %}
+    <h1>Immobilier index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>TypeDemande</th>
+                <th>Localite</th>
+                <th>PrixMin</th>
+                <th>PrixMax</th>
+                <th>PiecesMin</th>
+                <th>SurfaceHabitableMin</th>
+                <th>SurfaceHabitableMax</th>
+                <th>TypeDobjet</th>
+                <th>Caracteristiques</th>
+                <th>Etage</th>
+                <th>Created_at</th>
+                <th>DisponibiliteMin</th>
+                <th>DisponibiliteMax</th>
+                <th>Image</th>
+                <th>PieceMax</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for immobilier in immobiliers %}
+            <tr>
+                <td>{{ immobilier.id }}</td>
+                <td>{{ immobilier.typeDemande }}</td>
+                <td>{{ immobilier.localite }}</td>
+                <td>{{ immobilier.prixMin }}</td>
+                <td>{{ immobilier.prixMax }}</td>
+                <td>{{ immobilier.piecesMin }}</td>
+                <td>{{ immobilier.surfaceHabitableMin }}</td>
+                <td>{{ immobilier.surfaceHabitableMax }}</td>
+                <td>{{ immobilier.typeDobjet }}</td>
+                <td>{{ immobilier.caracteristiques }}</td>
+                <td>{{ immobilier.etage }}</td>
+                <td>{{ immobilier.createdAt ? immobilier.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ immobilier.disponibiliteMin }}</td>
+                <td>{{ immobilier.disponibiliteMax }}</td>
+                <td>{{ immobilier.image }}</td>
+                <td>{{ immobilier.pieceMax }}</td>
+                <td>
+                    <a href="{{ path('immobilier_show', {'id': immobilier.id}) }}">show</a>
+                    <a href="{{ path('immobilier_edit', {'id': immobilier.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="17">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('immobilier_new') }}">Create new</a>
+{% endblock %}

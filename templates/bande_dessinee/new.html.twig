@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New BandeDessinee{% endblock %}
+
+{% block body %}
+    <h1>Create new BandeDessinee</h1>
+
+    {{ include('bande_dessinee/_form.html.twig') }}
+
+    <a href="{{ path('bande_dessinee_index') }}">back to list</a>
+{% endblock %}

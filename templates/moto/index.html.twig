@@ -1,0 +1,111 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Moto index{% endblock %}
+
+{% block body %}
+    <h1>Moto index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Marque</th>
+                <th>Modele</th>
+                <th>Version</th>
+                <th>PrixMin</th>
+                <th>PrixMax</th>
+                <th>BoiteDeVitesse</th>
+                <th>RouesMotrices</th>
+                <th>KilometrageMin</th>
+                <th>KilometrageMax</th>
+                <th>Carburant</th>
+                <th>CategorieMoto</th>
+                <th>AnneeMin</th>
+                <th>AnneeMax</th>
+                <th>CategorieLicence</th>
+                <th>KwMin</th>
+                <th>KwMax</th>
+                <th>CylindreMin</th>
+                <th>CylindreMax</th>
+                <th>Qualites</th>
+                <th>Categorie</th>
+                <th>Couleur</th>
+                <th>PlacesMin</th>
+                <th>PlacesMax</th>
+                <th>Equipement</th>
+                <th>EquipementSuplementaire</th>
+                <th>QualiteEquipement</th>
+                <th>Consommation</th>
+                <th>Co2EmissionBis</th>
+                <th>NormesEmission</th>
+                <th>NpaLieu</th>
+                <th>Rayon</th>
+                <th>AgeDelAnnonce</th>
+                <th>Tri</th>
+                <th>SigleQualite</th>
+                <th>ChMin</th>
+                <th>ChMax</th>
+                <th>PoidsRemarquableMin</th>
+                <th>PoidsRemarquableMax</th>
+                <th>Image</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for moto in motos %}
+            <tr>
+                <td>{{ moto.id }}</td>
+                <td>{{ moto.marque }}</td>
+                <td>{{ moto.modele }}</td>
+                <td>{{ moto.version }}</td>
+                <td>{{ moto.prixMin }}</td>
+                <td>{{ moto.prixMax }}</td>
+                <td>{{ moto.boiteDeVitesse }}</td>
+                <td>{{ moto.rouesMotrices }}</td>
+                <td>{{ moto.kilometrageMin }}</td>
+                <td>{{ moto.kilometrageMax }}</td>
+                <td>{{ moto.carburant }}</td>
+                <td>{{ moto.categorieMoto }}</td>
+                <td>{{ moto.anneeMin }}</td>
+                <td>{{ moto.anneeMax }}</td>
+                <td>{{ moto.categorieLicence }}</td>
+                <td>{{ moto.kwMin }}</td>
+                <td>{{ moto.kwMax }}</td>
+                <td>{{ moto.cylindreMin }}</td>
+                <td>{{ moto.cylindreMax }}</td>
+                <td>{{ moto.qualites }}</td>
+                <td>{{ moto.categorie }}</td>
+                <td>{{ moto.couleur }}</td>
+                <td>{{ moto.placesMin }}</td>
+                <td>{{ moto.placesMax }}</td>
+                <td>{{ moto.equipement }}</td>
+                <td>{{ moto.equipementSuplementaire }}</td>
+                <td>{{ moto.qualiteEquipement }}</td>
+                <td>{{ moto.consommation }}</td>
+                <td>{{ moto.co2EmissionBis }}</td>
+                <td>{{ moto.normesEmission }}</td>
+                <td>{{ moto.npaLieu }}</td>
+                <td>{{ moto.rayon }}</td>
+                <td>{{ moto.ageDelAnnonce }}</td>
+                <td>{{ moto.tri }}</td>
+                <td>{{ moto.sigleQualite }}</td>
+                <td>{{ moto.chMin }}</td>
+                <td>{{ moto.chMax }}</td>
+                <td>{{ moto.poidsRemarquableMin }}</td>
+                <td>{{ moto.poidsRemarquableMax }}</td>
+                <td>{{ moto.image }}</td>
+                <td>
+                    <a href="{{ path('moto_show', {'id': moto.id}) }}">show</a>
+                    <a href="{{ path('moto_edit', {'id': moto.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="41">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('moto_new') }}">Create new</a>
+{% endblock %}

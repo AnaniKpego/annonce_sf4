@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Advertiser{% endblock %}
+
+{% block body %}
+    <h1>Edit Advertiser</h1>
+
+    {{ include('advertiser/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('advertiser_index') }}">back to list</a>
+
+    {{ include('advertiser/_delete_form.html.twig') }}
+{% endblock %}

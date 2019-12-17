@@ -1,0 +1,79 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Montre index{% endblock %}
+
+{% block body %}
+    <h1>Montre index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Reference</th>
+                <th>Prix</th>
+                <th>Disponibilite</th>
+                <th>Resume</th>
+                <th>Description</th>
+                <th>Genre</th>
+                <th>Age</th>
+                <th>Boitier</th>
+                <th>Couleurducadran</th>
+                <th>Couleurboitier</th>
+                <th>Taille</th>
+                <th>Epaisseur</th>
+                <th>Verre</th>
+                <th>Affichage</th>
+                <th>Mouvement</th>
+                <th>Bracelet</th>
+                <th>Couleurdubracelet</th>
+                <th>Entrecorne</th>
+                <th>Fermoir</th>
+                <th>Etancheite</th>
+                <th>Garantie</th>
+                <th>Image</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for montre in montres %}
+            <tr>
+                <td>{{ montre.id }}</td>
+                <td>{{ montre.titre }}</td>
+                <td>{{ montre.reference }}</td>
+                <td>{{ montre.prix }}</td>
+                <td>{{ montre.disponibilite }}</td>
+                <td>{{ montre.resume }}</td>
+                <td>{{ montre.description }}</td>
+                <td>{{ montre.genre }}</td>
+                <td>{{ montre.age }}</td>
+                <td>{{ montre.boitier }}</td>
+                <td>{{ montre.couleurducadran }}</td>
+                <td>{{ montre.couleurboitier }}</td>
+                <td>{{ montre.taille }}</td>
+                <td>{{ montre.epaisseur }}</td>
+                <td>{{ montre.verre }}</td>
+                <td>{{ montre.affichage }}</td>
+                <td>{{ montre.mouvement }}</td>
+                <td>{{ montre.bracelet }}</td>
+                <td>{{ montre.couleurdubracelet }}</td>
+                <td>{{ montre.entrecorne }}</td>
+                <td>{{ montre.fermoir }}</td>
+                <td>{{ montre.etancheite }}</td>
+                <td>{{ montre.garantie }}</td>
+                <td>{{ montre.image }}</td>
+                <td>
+                    <a href="{{ path('montre_show', {'id': montre.id}) }}">show</a>
+                    <a href="{{ path('montre_edit', {'id': montre.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="25">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('montre_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,117 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Vehicule index{% endblock %}
+
+{% block body %}
+    <h1>Vehicule index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Marque</th>
+                <th>Modele</th>
+                <th>Version</th>
+                <th>PrixMin</th>
+                <th>PrixMax</th>
+                <th>BoiteDeVitesse</th>
+                <th>RouesMotrices</th>
+                <th>KilometrageMin</th>
+                <th>KilometrageMax</th>
+                <th>Carburant</th>
+                <th>CategorieVehicule</th>
+                <th>AnneeMin</th>
+                <th>AnneeMax</th>
+                <th>CategorieLicence</th>
+                <th>KwMin</th>
+                <th>KwMax</th>
+                <th>CylindreMin</th>
+                <th>CylindreMax</th>
+                <th>Qualites</th>
+                <th>Categorie</th>
+                <th>Couleur</th>
+                <th>PlacesMin</th>
+                <th>PlacesMax</th>
+                <th>Equipement</th>
+                <th>EquipementSuplementaire</th>
+                <th>QualiteEquipement</th>
+                <th>Consommation</th>
+                <th>Co2EmissionBis</th>
+                <th>NormesEmission</th>
+                <th>NpaLieu</th>
+                <th>Rayon</th>
+                <th>AgeDelAnnonce</th>
+                <th>Tri</th>
+                <th>SigleQualite</th>
+                <th>ChMin</th>
+                <th>ChMax</th>
+                <th>PoidsRemarquableMin</th>
+                <th>PoidsRemarquableMax</th>
+                <th>TypeCarrosserie</th>
+                <th>NbrePorteMin</th>
+                <th>NbrePorteMax</th>
+                <th>Image</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for vehicule in vehicules %}
+            <tr>
+                <td>{{ vehicule.id }}</td>
+                <td>{{ vehicule.marque }}</td>
+                <td>{{ vehicule.modele }}</td>
+                <td>{{ vehicule.version }}</td>
+                <td>{{ vehicule.prixMin }}</td>
+                <td>{{ vehicule.prixMax }}</td>
+                <td>{{ vehicule.boiteDeVitesse }}</td>
+                <td>{{ vehicule.rouesMotrices }}</td>
+                <td>{{ vehicule.kilometrageMin }}</td>
+                <td>{{ vehicule.kilometrageMax }}</td>
+                <td>{{ vehicule.carburant }}</td>
+                <td>{{ vehicule.categorieVehicule }}</td>
+                <td>{{ vehicule.anneeMin }}</td>
+                <td>{{ vehicule.anneeMax }}</td>
+                <td>{{ vehicule.categorieLicence }}</td>
+                <td>{{ vehicule.kwMin }}</td>
+                <td>{{ vehicule.kwMax }}</td>
+                <td>{{ vehicule.cylindreMin }}</td>
+                <td>{{ vehicule.cylindreMax }}</td>
+                <td>{{ vehicule.qualites }}</td>
+                <td>{{ vehicule.categorie }}</td>
+                <td>{{ vehicule.couleur }}</td>
+                <td>{{ vehicule.placesMin }}</td>
+                <td>{{ vehicule.placesMax }}</td>
+                <td>{{ vehicule.equipement }}</td>
+                <td>{{ vehicule.equipementSuplementaire }}</td>
+                <td>{{ vehicule.qualiteEquipement }}</td>
+                <td>{{ vehicule.consommation }}</td>
+                <td>{{ vehicule.co2EmissionBis }}</td>
+                <td>{{ vehicule.normesEmission }}</td>
+                <td>{{ vehicule.npaLieu }}</td>
+                <td>{{ vehicule.rayon }}</td>
+                <td>{{ vehicule.ageDelAnnonce }}</td>
+                <td>{{ vehicule.tri }}</td>
+                <td>{{ vehicule.sigleQualite }}</td>
+                <td>{{ vehicule.chMin }}</td>
+                <td>{{ vehicule.chMax }}</td>
+                <td>{{ vehicule.poidsRemarquableMin }}</td>
+                <td>{{ vehicule.poidsRemarquableMax }}</td>
+                <td>{{ vehicule.typeCarrosserie }}</td>
+                <td>{{ vehicule.nbrePorteMin }}</td>
+                <td>{{ vehicule.nbrePorteMax }}</td>
+                <td>{{ vehicule.image }}</td>
+                <td>
+                    <a href="{{ path('vehicule_show', {'id': vehicule.id}) }}">show</a>
+                    <a href="{{ path('vehicule_edit', {'id': vehicule.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="44">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('vehicule_new') }}">Create new</a>
+{% endblock %}

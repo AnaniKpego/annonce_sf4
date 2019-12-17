@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New CampingCar{% endblock %}
+
+{% block body %}
+    <h1>Create new CampingCar</h1>
+
+    {{ include('camping_car/_form.html.twig') }}
+
+    <a href="{{ path('camping_car_index') }}">back to list</a>
+{% endblock %}

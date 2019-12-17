@@ -1,0 +1,178 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Moto{% endblock %}
+
+{% block body %}
+    <h1>Moto</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ moto.id }}</td>
+            </tr>
+            <tr>
+                <th>Marque</th>
+                <td>{{ moto.marque }}</td>
+            </tr>
+            <tr>
+                <th>Modele</th>
+                <td>{{ moto.modele }}</td>
+            </tr>
+            <tr>
+                <th>Version</th>
+                <td>{{ moto.version }}</td>
+            </tr>
+            <tr>
+                <th>PrixMin</th>
+                <td>{{ moto.prixMin }}</td>
+            </tr>
+            <tr>
+                <th>PrixMax</th>
+                <td>{{ moto.prixMax }}</td>
+            </tr>
+            <tr>
+                <th>BoiteDeVitesse</th>
+                <td>{{ moto.boiteDeVitesse }}</td>
+            </tr>
+            <tr>
+                <th>RouesMotrices</th>
+                <td>{{ moto.rouesMotrices }}</td>
+            </tr>
+            <tr>
+                <th>KilometrageMin</th>
+                <td>{{ moto.kilometrageMin }}</td>
+            </tr>
+            <tr>
+                <th>KilometrageMax</th>
+                <td>{{ moto.kilometrageMax }}</td>
+            </tr>
+            <tr>
+                <th>Carburant</th>
+                <td>{{ moto.carburant }}</td>
+            </tr>
+            <tr>
+                <th>CategorieMoto</th>
+                <td>{{ moto.categorieMoto }}</td>
+            </tr>
+            <tr>
+                <th>AnneeMin</th>
+                <td>{{ moto.anneeMin }}</td>
+            </tr>
+            <tr>
+                <th>AnneeMax</th>
+                <td>{{ moto.anneeMax }}</td>
+            </tr>
+            <tr>
+                <th>CategorieLicence</th>
+                <td>{{ moto.categorieLicence }}</td>
+            </tr>
+            <tr>
+                <th>KwMin</th>
+                <td>{{ moto.kwMin }}</td>
+            </tr>
+            <tr>
+                <th>KwMax</th>
+                <td>{{ moto.kwMax }}</td>
+            </tr>
+            <tr>
+                <th>CylindreMin</th>
+                <td>{{ moto.cylindreMin }}</td>
+            </tr>
+            <tr>
+                <th>CylindreMax</th>
+                <td>{{ moto.cylindreMax }}</td>
+            </tr>
+            <tr>
+                <th>Qualites</th>
+                <td>{{ moto.qualites }}</td>
+            </tr>
+            <tr>
+                <th>Categorie</th>
+                <td>{{ moto.categorie }}</td>
+            </tr>
+            <tr>
+                <th>Couleur</th>
+                <td>{{ moto.couleur }}</td>
+            </tr>
+            <tr>
+                <th>PlacesMin</th>
+                <td>{{ moto.placesMin }}</td>
+            </tr>
+            <tr>
+                <th>PlacesMax</th>
+                <td>{{ moto.placesMax }}</td>
+            </tr>
+            <tr>
+                <th>Equipement</th>
+                <td>{{ moto.equipement }}</td>
+            </tr>
+            <tr>
+                <th>EquipementSuplementaire</th>
+                <td>{{ moto.equipementSuplementaire }}</td>
+            </tr>
+            <tr>
+                <th>QualiteEquipement</th>
+                <td>{{ moto.qualiteEquipement }}</td>
+            </tr>
+            <tr>
+                <th>Consommation</th>
+                <td>{{ moto.consommation }}</td>
+            </tr>
+            <tr>
+                <th>Co2EmissionBis</th>
+                <td>{{ moto.co2EmissionBis }}</td>
+            </tr>
+            <tr>
+                <th>NormesEmission</th>
+                <td>{{ moto.normesEmission }}</td>
+            </tr>
+            <tr>
+                <th>NpaLieu</th>
+                <td>{{ moto.npaLieu }}</td>
+            </tr>
+            <tr>
+                <th>Rayon</th>
+                <td>{{ moto.rayon }}</td>
+            </tr>
+            <tr>
+                <th>AgeDelAnnonce</th>
+                <td>{{ moto.ageDelAnnonce }}</td>
+            </tr>
+            <tr>
+                <th>Tri</th>
+                <td>{{ moto.tri }}</td>
+            </tr>
+            <tr>
+                <th>SigleQualite</th>
+                <td>{{ moto.sigleQualite }}</td>
+            </tr>
+            <tr>
+                <th>ChMin</th>
+                <td>{{ moto.chMin }}</td>
+            </tr>
+            <tr>
+                <th>ChMax</th>
+                <td>{{ moto.chMax }}</td>
+            </tr>
+            <tr>
+                <th>PoidsRemarquableMin</th>
+                <td>{{ moto.poidsRemarquableMin }}</td>
+            </tr>
+            <tr>
+                <th>PoidsRemarquableMax</th>
+                <td>{{ moto.poidsRemarquableMax }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ moto.image }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('moto_index') }}">back to list</a>
+
+    <a href="{{ path('moto_edit', {'id': moto.id}) }}">edit</a>
+
+    {{ include('moto/_delete_form.html.twig') }}
+{% endblock %}

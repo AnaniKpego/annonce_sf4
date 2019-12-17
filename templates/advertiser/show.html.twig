@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Advertiser{% endblock %}
+
+{% block body %}
+    <h1>Advertiser</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ advertiser.id }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ advertiser.email }}</td>
+            </tr>
+            <tr>
+                <th>Password</th>
+                <td>{{ advertiser.password }}</td>
+            </tr>
+            <tr>
+                <th>Firstname</th>
+                <td>{{ advertiser.firstname }}</td>
+            </tr>
+            <tr>
+                <th>Lastname</th>
+                <td>{{ advertiser.lastname }}</td>
+            </tr>
+            <tr>
+                <th>Country</th>
+                <td>{{ advertiser.country }}</td>
+            </tr>
+            <tr>
+                <th>City</th>
+                <td>{{ advertiser.city }}</td>
+            </tr>
+            <tr>
+                <th>Created_at</th>
+                <td>{{ advertiser.createdAt ? advertiser.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Phone</th>
+                <td>{{ advertiser.phone }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('advertiser_index') }}">back to list</a>
+
+    <a href="{{ path('advertiser_edit', {'id': advertiser.id}) }}">edit</a>
+
+    {{ include('advertiser/_delete_form.html.twig') }}
+{% endblock %}

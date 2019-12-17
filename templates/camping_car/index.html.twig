@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CampingCar index{% endblock %}
+
+{% block body %}
+    <h1>CampingCar index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Created_at</th>
+                <th>Titre</th>
+                <th>NbreDePlace</th>
+                <th>NbreCouchage</th>
+                <th>Carburant</th>
+                <th>Killomertage</th>
+                <th>Marque</th>
+                <th>Longueur</th>
+                <th>Hauteur</th>
+                <th>BoiteDeVitesse</th>
+                <th>TypeDeCouchage</th>
+                <th>Consommation</th>
+                <th>Equipements</th>
+                <th>Options</th>
+                <th>Extras</th>
+                <th>Description</th>
+                <th>ConditionsDeLocation</th>
+                <th>TypeAssurance</th>
+                <th>HeureDeDepart</th>
+                <th>HeureDeRetour</th>
+                <th>Localite</th>
+                <th>Image</th>
+                <th>TarifDeLocation</th>
+                <th>TarifAssurance</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for camping_car in camping_cars %}
+            <tr>
+                <td>{{ camping_car.id }}</td>
+                <td>{{ camping_car.createdAt ? camping_car.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ camping_car.titre }}</td>
+                <td>{{ camping_car.nbreDePlace }}</td>
+                <td>{{ camping_car.nbreCouchage }}</td>
+                <td>{{ camping_car.carburant }}</td>
+                <td>{{ camping_car.killomertage }}</td>
+                <td>{{ camping_car.marque }}</td>
+                <td>{{ camping_car.longueur }}</td>
+                <td>{{ camping_car.hauteur }}</td>
+                <td>{{ camping_car.boiteDeVitesse }}</td>
+                <td>{{ camping_car.typeDeCouchage }}</td>
+                <td>{{ camping_car.consommation }}</td>
+                <td>{{ camping_car.equipements }}</td>
+                <td>{{ camping_car.options }}</td>
+                <td>{{ camping_car.extras }}</td>
+                <td>{{ camping_car.description }}</td>
+                <td>{{ camping_car.conditionsDeLocation }}</td>
+                <td>{{ camping_car.typeAssurance }}</td>
+                <td>{{ camping_car.heureDeDepart }}</td>
+                <td>{{ camping_car.heureDeRetour }}</td>
+                <td>{{ camping_car.localite }}</td>
+                <td>{{ camping_car.image }}</td>
+                <td>{{ camping_car.tarifDeLocation }}</td>
+                <td>{{ camping_car.tarifAssurance }}</td>
+                <td>
+                    <a href="{{ path('camping_car_show', {'id': camping_car.id}) }}">show</a>
+                    <a href="{{ path('camping_car_edit', {'id': camping_car.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="26">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('camping_car_new') }}">Create new</a>
+{% endblock %}

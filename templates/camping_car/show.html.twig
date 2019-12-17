@@ -1,0 +1,118 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CampingCar{% endblock %}
+
+{% block body %}
+    <h1>CampingCar</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ camping_car.id }}</td>
+            </tr>
+            <tr>
+                <th>Created_at</th>
+                <td>{{ camping_car.createdAt ? camping_car.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ camping_car.titre }}</td>
+            </tr>
+            <tr>
+                <th>NbreDePlace</th>
+                <td>{{ camping_car.nbreDePlace }}</td>
+            </tr>
+            <tr>
+                <th>NbreCouchage</th>
+                <td>{{ camping_car.nbreCouchage }}</td>
+            </tr>
+            <tr>
+                <th>Carburant</th>
+                <td>{{ camping_car.carburant }}</td>
+            </tr>
+            <tr>
+                <th>Killomertage</th>
+                <td>{{ camping_car.killomertage }}</td>
+            </tr>
+            <tr>
+                <th>Marque</th>
+                <td>{{ camping_car.marque }}</td>
+            </tr>
+            <tr>
+                <th>Longueur</th>
+                <td>{{ camping_car.longueur }}</td>
+            </tr>
+            <tr>
+                <th>Hauteur</th>
+                <td>{{ camping_car.hauteur }}</td>
+            </tr>
+            <tr>
+                <th>BoiteDeVitesse</th>
+                <td>{{ camping_car.boiteDeVitesse }}</td>
+            </tr>
+            <tr>
+                <th>TypeDeCouchage</th>
+                <td>{{ camping_car.typeDeCouchage }}</td>
+            </tr>
+            <tr>
+                <th>Consommation</th>
+                <td>{{ camping_car.consommation }}</td>
+            </tr>
+            <tr>
+                <th>Equipements</th>
+                <td>{{ camping_car.equipements }}</td>
+            </tr>
+            <tr>
+                <th>Options</th>
+                <td>{{ camping_car.options }}</td>
+            </tr>
+            <tr>
+                <th>Extras</th>
+                <td>{{ camping_car.extras }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ camping_car.description }}</td>
+            </tr>
+            <tr>
+                <th>ConditionsDeLocation</th>
+                <td>{{ camping_car.conditionsDeLocation }}</td>
+            </tr>
+            <tr>
+                <th>TypeAssurance</th>
+                <td>{{ camping_car.typeAssurance }}</td>
+            </tr>
+            <tr>
+                <th>HeureDeDepart</th>
+                <td>{{ camping_car.heureDeDepart }}</td>
+            </tr>
+            <tr>
+                <th>HeureDeRetour</th>
+                <td>{{ camping_car.heureDeRetour }}</td>
+            </tr>
+            <tr>
+                <th>Localite</th>
+                <td>{{ camping_car.localite }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ camping_car.image }}</td>
+            </tr>
+            <tr>
+                <th>TarifDeLocation</th>
+                <td>{{ camping_car.tarifDeLocation }}</td>
+            </tr>
+            <tr>
+                <th>TarifAssurance</th>
+                <td>{{ camping_car.tarifAssurance }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('camping_car_index') }}">back to list</a>
+
+    <a href="{{ path('camping_car_edit', {'id': camping_car.id}) }}">edit</a>
+
+    {{ include('camping_car/_delete_form.html.twig') }}
+{% endblock %}

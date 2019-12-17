@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ad index{% endblock %}
+
+{% block body %}
+    <h1>Ad index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Content</th>
+                <th>Created_at</th>
+                <th>Opened_at</th>
+                <th>Closed_at</th>
+                <th>Monthlyprice</th>
+                <th>Dailyprice</th>
+                <th>Annualprice</th>
+                <th>Sellingprice</th>
+                <th>Country</th>
+                <th>City</th>
+                <th>Phone</th>
+                <th>Chrono</th>
+                <th>Statu</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for ad in ads %}
+            <tr>
+                <td>{{ ad.id }}</td>
+                <td>{{ ad.title }}</td>
+                <td>{{ ad.content }}</td>
+                <td>{{ ad.createdAt ? ad.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ ad.openedAt ? ad.openedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ ad.closedAt ? ad.closedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ ad.monthlyprice }}</td>
+                <td>{{ ad.dailyprice }}</td>
+                <td>{{ ad.annualprice }}</td>
+                <td>{{ ad.sellingprice }}</td>
+                <td>{{ ad.country }}</td>
+                <td>{{ ad.city }}</td>
+                <td>{{ ad.phone }}</td>
+                <td>{{ ad.chrono }}</td>
+                <td>{{ ad.statu }}</td>
+                <td>
+                    <a href="{{ path('ad_show', {'id': ad.id}) }}">show</a>
+                    <a href="{{ path('ad_edit', {'id': ad.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="16">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('ad_new') }}">Create new</a>
+{% endblock %}

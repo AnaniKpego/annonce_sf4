@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}BandeDessinee{% endblock %}
+
+{% block body %}
+    <h1>BandeDessinee</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ bande_dessinee.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ bande_dessinee.titre }}</td>
+            </tr>
+            <tr>
+                <th>DateLimiteDeLalbum</th>
+                <td>{{ bande_dessinee.dateLimiteDeLalbum }}</td>
+            </tr>
+            <tr>
+                <th>Editeur</th>
+                <td>{{ bande_dessinee.editeur }}</td>
+            </tr>
+            <tr>
+                <th>EditionOriginale</th>
+                <td>{{ bande_dessinee.editionOriginale ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Vendeur</th>
+                <td>{{ bande_dessinee.vendeur }}</td>
+            </tr>
+            <tr>
+                <th>NbDeVente</th>
+                <td>{{ bande_dessinee.nbDeVente }}</td>
+            </tr>
+            <tr>
+                <th>EtatGeneral</th>
+                <td>{{ bande_dessinee.etatGeneral }}</td>
+            </tr>
+            <tr>
+                <th>PrixDeVente</th>
+                <td>{{ bande_dessinee.prixDeVente }}</td>
+            </tr>
+            <tr>
+                <th>LieuDeVente</th>
+                <td>{{ bande_dessinee.lieuDeVente }}</td>
+            </tr>
+            <tr>
+                <th>IdDeVente</th>
+                <td>{{ bande_dessinee.idDeVente }}</td>
+            </tr>
+            <tr>
+                <th>DateLimiteDeVente</th>
+                <td>{{ bande_dessinee.dateLimiteDeVente }}</td>
+            </tr>
+            <tr>
+                <th>Commentaire</th>
+                <td>{{ bande_dessinee.commentaire }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ bande_dessinee.image }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('bande_dessinee_index') }}">back to list</a>
+
+    <a href="{{ path('bande_dessinee_edit', {'id': bande_dessinee.id}) }}">edit</a>
+
+    {{ include('bande_dessinee/_delete_form.html.twig') }}
+{% endblock %}

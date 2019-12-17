@@ -1,0 +1,110 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Livre{% endblock %}
+
+{% block body %}
+    <h1>Livre</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ livre.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ livre.titre }}</td>
+            </tr>
+            <tr>
+                <th>DateLimiteDeLalbum</th>
+                <td>{{ livre.dateLimiteDeLalbum }}</td>
+            </tr>
+            <tr>
+                <th>Editeur</th>
+                <td>{{ livre.editeur }}</td>
+            </tr>
+            <tr>
+                <th>EditionOriginale</th>
+                <td>{{ livre.editionOriginale ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Vendeur</th>
+                <td>{{ livre.vendeur }}</td>
+            </tr>
+            <tr>
+                <th>NbDeVente</th>
+                <td>{{ livre.nbDeVente }}</td>
+            </tr>
+            <tr>
+                <th>EtatGeneral</th>
+                <td>{{ livre.etatGeneral }}</td>
+            </tr>
+            <tr>
+                <th>PrixDeVente</th>
+                <td>{{ livre.prixDeVente }}</td>
+            </tr>
+            <tr>
+                <th>LieuDeVente</th>
+                <td>{{ livre.lieuDeVente }}</td>
+            </tr>
+            <tr>
+                <th>IdDeVente</th>
+                <td>{{ livre.idDeVente }}</td>
+            </tr>
+            <tr>
+                <th>DateLimiteDeVente</th>
+                <td>{{ livre.dateLimiteDeVente }}</td>
+            </tr>
+            <tr>
+                <th>Commentaire</th>
+                <td>{{ livre.commentaire }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ livre.image }}</td>
+            </tr>
+            <tr>
+                <th>Langue</th>
+                <td>{{ livre.langue }}</td>
+            </tr>
+            <tr>
+                <th>Traducteur</th>
+                <td>{{ livre.traducteur }}</td>
+            </tr>
+            <tr>
+                <th>Format</th>
+                <td>{{ livre.format }}</td>
+            </tr>
+            <tr>
+                <th>Collection</th>
+                <td>{{ livre.collection }}</td>
+            </tr>
+            <tr>
+                <th>Dateparution</th>
+                <td>{{ livre.dateparution }}</td>
+            </tr>
+            <tr>
+                <th>Nbrepage</th>
+                <td>{{ livre.nbrepage }}</td>
+            </tr>
+            <tr>
+                <th>Ean</th>
+                <td>{{ livre.ean }}</td>
+            </tr>
+            <tr>
+                <th>Isbn</th>
+                <td>{{ livre.isbn }}</td>
+            </tr>
+            <tr>
+                <th>Disponibilite</th>
+                <td>{{ livre.disponibilite }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('livre_index') }}">back to list</a>
+
+    <a href="{{ path('livre_edit', {'id': livre.id}) }}">edit</a>
+
+    {{ include('livre/_delete_form.html.twig') }}
+{% endblock %}

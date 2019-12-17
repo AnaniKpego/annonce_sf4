@@ -1,0 +1,114 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Montre{% endblock %}
+
+{% block body %}
+    <h1>Montre</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ montre.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ montre.titre }}</td>
+            </tr>
+            <tr>
+                <th>Reference</th>
+                <td>{{ montre.reference }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ montre.prix }}</td>
+            </tr>
+            <tr>
+                <th>Disponibilite</th>
+                <td>{{ montre.disponibilite }}</td>
+            </tr>
+            <tr>
+                <th>Resume</th>
+                <td>{{ montre.resume }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ montre.description }}</td>
+            </tr>
+            <tr>
+                <th>Genre</th>
+                <td>{{ montre.genre }}</td>
+            </tr>
+            <tr>
+                <th>Age</th>
+                <td>{{ montre.age }}</td>
+            </tr>
+            <tr>
+                <th>Boitier</th>
+                <td>{{ montre.boitier }}</td>
+            </tr>
+            <tr>
+                <th>Couleurducadran</th>
+                <td>{{ montre.couleurducadran }}</td>
+            </tr>
+            <tr>
+                <th>Couleurboitier</th>
+                <td>{{ montre.couleurboitier }}</td>
+            </tr>
+            <tr>
+                <th>Taille</th>
+                <td>{{ montre.taille }}</td>
+            </tr>
+            <tr>
+                <th>Epaisseur</th>
+                <td>{{ montre.epaisseur }}</td>
+            </tr>
+            <tr>
+                <th>Verre</th>
+                <td>{{ montre.verre }}</td>
+            </tr>
+            <tr>
+                <th>Affichage</th>
+                <td>{{ montre.affichage }}</td>
+            </tr>
+            <tr>
+                <th>Mouvement</th>
+                <td>{{ montre.mouvement }}</td>
+            </tr>
+            <tr>
+                <th>Bracelet</th>
+                <td>{{ montre.bracelet }}</td>
+            </tr>
+            <tr>
+                <th>Couleurdubracelet</th>
+                <td>{{ montre.couleurdubracelet }}</td>
+            </tr>
+            <tr>
+                <th>Entrecorne</th>
+                <td>{{ montre.entrecorne }}</td>
+            </tr>
+            <tr>
+                <th>Fermoir</th>
+                <td>{{ montre.fermoir }}</td>
+            </tr>
+            <tr>
+                <th>Etancheite</th>
+                <td>{{ montre.etancheite }}</td>
+            </tr>
+            <tr>
+                <th>Garantie</th>
+                <td>{{ montre.garantie }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ montre.image }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('montre_index') }}">back to list</a>
+
+    <a href="{{ path('montre_edit', {'id': montre.id}) }}">edit</a>
+
+    {{ include('montre/_delete_form.html.twig') }}
+{% endblock %}

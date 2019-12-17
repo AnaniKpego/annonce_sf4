@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}BandeDessinee index{% endblock %}
+
+{% block body %}
+    <h1>BandeDessinee index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>DateLimiteDeLalbum</th>
+                <th>Editeur</th>
+                <th>EditionOriginale</th>
+                <th>Vendeur</th>
+                <th>NbDeVente</th>
+                <th>EtatGeneral</th>
+                <th>PrixDeVente</th>
+                <th>LieuDeVente</th>
+                <th>IdDeVente</th>
+                <th>DateLimiteDeVente</th>
+                <th>Commentaire</th>
+                <th>Image</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for bande_dessinee in bande_dessinees %}
+            <tr>
+                <td>{{ bande_dessinee.id }}</td>
+                <td>{{ bande_dessinee.titre }}</td>
+                <td>{{ bande_dessinee.dateLimiteDeLalbum }}</td>
+                <td>{{ bande_dessinee.editeur }}</td>
+                <td>{{ bande_dessinee.editionOriginale ? 'Yes' : 'No' }}</td>
+                <td>{{ bande_dessinee.vendeur }}</td>
+                <td>{{ bande_dessinee.nbDeVente }}</td>
+                <td>{{ bande_dessinee.etatGeneral }}</td>
+                <td>{{ bande_dessinee.prixDeVente }}</td>
+                <td>{{ bande_dessinee.lieuDeVente }}</td>
+                <td>{{ bande_dessinee.idDeVente }}</td>
+                <td>{{ bande_dessinee.dateLimiteDeVente }}</td>
+                <td>{{ bande_dessinee.commentaire }}</td>
+                <td>{{ bande_dessinee.image }}</td>
+                <td>
+                    <a href="{{ path('bande_dessinee_show', {'id': bande_dessinee.id}) }}">show</a>
+                    <a href="{{ path('bande_dessinee_edit', {'id': bande_dessinee.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="15">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('bande_dessinee_new') }}">Create new</a>
+{% endblock %}
